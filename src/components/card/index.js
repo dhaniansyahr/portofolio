@@ -82,12 +82,12 @@ const index = (props) => {
                       <li className="author">
                         <span className="flex gap-2">
                           <FontAwesomeIcon icon={faUser} />
-                          Rama Dhaniansyah
+                          {item.name}
                         </span>
                       </li>
                       <li className="date flex gap-2">
                         <FontAwesomeIcon icon={faCalendar} />
-                        Aug. 24, 2015
+                        {item.date}
                       </li>
                       <li className="tags ml-[5px]">
                         <ul className="">
@@ -95,10 +95,12 @@ const index = (props) => {
                             <FontAwesomeIcon icon={faTag} />
                             {/* <span>Learn</span> */}
                           </li>
-                          <li>
-                            <span>Learn</span>
-                          </li>
-                          <li>
+                          {item.tags.map((tag) => (
+                            <li>
+                              <span>{tag}</span>
+                            </li>
+                          ))}
+                          {/* <li>
                             <span>Code</span>
                           </li>
                           <li>
@@ -106,22 +108,15 @@ const index = (props) => {
                           </li>
                           <li>
                             <span>CSS</span>
-                          </li>
+                          </li> */}
                         </ul>
                       </li>
                     </ul>
                   </div>
                   <div class="description font-oswald">
-                    <h1 className="font-bold">Sistem Informasi Akademik USK</h1>
-                    <h2>
-                      Memudahkan Dalam Mengakses Semua Sistem Perkuliahan`
-                    </h2>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Ad eum dolorum architecto obcaecati enim dicta
-                      praesentium, quam nobis! Neque ad aliquam facilis numquam.
-                      Veritatis, sit.
-                    </p>
+                    <h1 className="font-bold">{item.title}</h1>
+                    <h2>{item.simpleDescription}</h2>
+                    <p>{item.descriptions}</p>
                     <p class="read-more">
                       <span>Read More</span>
                     </p>
