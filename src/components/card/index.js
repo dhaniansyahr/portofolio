@@ -118,7 +118,9 @@ const index = (props) => {
                     <h2>{item.simpleDescription}</h2>
                     <p>{item.descriptions}</p>
                     <p class="read-more">
-                      <span>Read More</span>
+                      <a href={item.url} target="_BLANK">
+                        Read More
+                      </a>
                     </p>
                   </div>
                 </div>
